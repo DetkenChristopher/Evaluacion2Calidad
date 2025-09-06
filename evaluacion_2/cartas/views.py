@@ -1,10 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from cartas.models import Carta
 
 def lista_cartas(request):
     cartas = Carta.objects.all()
-    return render(request, 'cartas/lista_cartas.html', {'cartas': cartas})
+    return render(request, 'Carta/lista_cartas.html', {'cartas': cartas})
 
-def detalle_carta(request, carta_id):
-    carta = get_object_or_404(Carta, pk=carta_id)
-    return render(request, 'cartas/detalle_carta.html', {'carta': carta})
+def detalle_carta(request, id):
+    carta = Carta.objects(id=id)
+    return render(request, 'Carta/detalle_carta.html', {'carta': carta})
