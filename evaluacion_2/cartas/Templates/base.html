@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>  
+    <meta charset="UTF-8">
+    <title>{% block title %}Productos{% endblock title %}</title>
+    {% load django_bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+    <div> 
+        {% block content %}{% endblock content %}
+    </div>
+</body>
+</html>

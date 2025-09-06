@@ -1,0 +1,17 @@
+{% extends "cartas/base.html" %}
+
+{% block title %}{{ carta.name }}{% endblock title %}
+
+{% block content %}
+<div class="card mb-4" style="max-width: 400px;">
+    <img src="{{ carta.image_url }}" class="card-img-top" alt="{{ carta.name }}">
+    <div class="card-body">
+        <h2 class="card-title">{{ carta.name }}</h2>
+        <p><strong>Defensa:</strong> {{ carta.defense }}</p>
+        <p><strong>Nivel:</strong> {{ carta.level }}</p>
+        <p><strong>Atributo:</strong> {{ carta.attribute }}</p>
+        <p><strong>Precio en Cardmarket:</strong> {{ carta.cardmarket_price }} USD</p>
+        <a href="{% url 'lista_cartas' %}" class="btn btn-secondary mt-3">Volver a la lista</a>
+    </div>
+</div>
+{% endblock content %}

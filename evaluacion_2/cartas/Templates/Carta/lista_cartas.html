@@ -1,0 +1,21 @@
+{% extends "cartas/base.html" %}
+
+{% block title %}Cartas Blue-Eyes{% endblock title %}
+
+{% block content %}
+<h1 class="mb-4">Cartas del Arquetipo Blue-Eyes</h1>
+<div class="row">
+    {% for carta in cartas %}
+    <div class="col-md-3 mb-4">
+        <div class="card h-100">
+            <img src="{{ carta.image_url }}" class="card-img-top" alt="{{ carta.name }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ carta.name }}</h5>
+                <p class="card-text">Precio: {{ carta.cardmarket_price }} USD</p>
+                <a href="{% url 'detalle_carta' carta.id %}" class="btn btn-primary">Ver detalles</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
